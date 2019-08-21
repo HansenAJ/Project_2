@@ -24,11 +24,22 @@ function getHelloWorldString() {
   return 'Ready To Launch!'
 }
 
-/* Step 5
- *
- * TODO: export all functions from this file by adding their names as keys to this
- * object
- */
+const addFight = (craftInput) => {
+  console.log("Mod DB : " + craftInput)
+    return FighterCollection.insertMany([ craftInput]);
+}
+const addBomb = (craftInput) => {
+  console.log("Mod DB : " + craftInput)
+    return BomberCollection.insertMany([ craftInput]);
+}
+const addCarr = (craftInput) => {
+  console.log("Mod DB : " + craftInput)
+    return CarrierCollection.insertMany([ craftInput]);
+  }
+
 module.exports = {
-  getHelloWorldString
+  getHelloWorldString,
+  addFight,
+  addBomb,
+  addCarr
 }
