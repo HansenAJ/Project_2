@@ -37,9 +37,21 @@ const addCarr = (craftInput) => {
     return CarrierCollection.insertMany([ craftInput]);
   }
 
+const getAllCarriers = () => {
+  return CarrierCollection.find()
+}
+
+  /*
+const getCarrierEscort = (carrierID) => {
+    let fightFind = FighterCollection.find(carrierID)
+    let bombFind = BomberCollection.find(carrierID)
+    return fightFind, bombFind
+  }
+*/
 module.exports = {
   getHelloWorldString,
   addFight,
   addBomb,
-  addCarr
+  addCarr,
+  getAllCarriers
 }

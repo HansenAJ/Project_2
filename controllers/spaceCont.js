@@ -40,6 +40,56 @@ spaceRouter.get('/', (req, res) => {
   res.send(spaceApi.getHelloWorldString())
 })
 
+spaceRouter.get('/addFighter', (req,res) => {
+  res.render('addFighter')
+})
+spaceRouter.get('/addBomber', (req,res) => {
+  res.render('addBomber')
+})
+spaceRouter.get('/addCarrier', (req,res) => {
+  res.render('addCarrier')
+})
+
+spaceRouter.post('/addShip/fighter', (req,res) =>{
+  spaceApi.addFight(req.body).then(() =>{
+    res.redirect('/space')
+  })
+})
+spaceRouter.post('/addShip/bomber', (req,res) =>{
+  spaceApi.addBomb(req.body).then(() =>{
+    res.redirect('/space')
+  })
+})
+spaceRouter.post('/addShip/carrier', (req,res) =>{
+  spaceApi.addCarr(req.body).then(() =>{
+    res.redirect('/space')
+  })
+})
+
+spaceRouter.get('/allCarriers', (req, res) => {
+  spaceApi.getAllCarriers().then((allCarriers) => {
+    res.render('allCarriers', {allCarriers});
+  })
+  //console.log(allIssues)
+})
+
+spaceRouter.get('/carriers/:id', (req, res) =>{
+  spaceApi.getCarrier(req.params.id).then((singleCarrier) => {
+        res.render('singleCarrier', {singleCarrier, id: req.params.id})
+      })
+    })
+
+// spaceRouter.get('/carriers/:id', (req, res) =>{
+//   spaceApi.getCarrier(id).then((id) => {
+//     spaceApi.getFighters(fighterList).then((fighterList) => {
+//       spaceApi.getBombers(bomberList).then((bomberList) => {
+//         res.render('singleCarrier', id, fighterList, bomberList)
+//       })
+//     })
+//   })
+// })
+
+
 /* Step 6
  *
  * Export the router from the file.
