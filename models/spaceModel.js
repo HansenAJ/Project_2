@@ -1,50 +1,27 @@
-/* 
- * Place all functions, classes, and/or DB schemas here for a single 
- * model.
- */
+const mongoose = require('./connection.js')
 
-/* Step 1
- *
- * TODO: import mongoose connection
- * NOTE: skip this if you are not using mongoose
- *
- */
-//const mongoose = require('./connection.js')
+const CarrierSchema = new mongoose.Schema({
+  name: String,
+  fighterNum: Number,
+  bomberNum: Number
+ })
 
-/* Step 1 alternative
- *
- * TODO: make a global variable to act as an in memory database. 
- * NOTE: doing this WILL NOT persist your data and you will loose
- * your data once you stop running your server.
- *
- */
-global.sampleModel = [];
+ const FighterSchema = new mongoose.Schema({
+  name: String,
+  carrierDock: String
+ })
 
-/* Step 2
- *
- * TODO: create model schema 
- * NOTE: skip this if you are not using mongoose
- *
- */
-//const SampleModelSchema = new mongoose.Schema({
-//  name: String
-//})
+ const BomberSchema = new mongoose.Schema({
+  name: String,
+  carrierDock: String
+ })
 
-/* Step 3
- *
- * TODO: create collection API
- * NOTE: skip this if you are not using mongoose
- *
- */
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
+const FighterCollection = mongoose.model('SpaceFighter', FighterSchema)
+const BomberCollection = mongoose.model('SpaceBomber', BomberSchema)
+const CarrierCollection = mongoose.model('SpaceCarrier', CarrierSchema)
 
-/* Step 4
- *
- * TODO: delete this it's just a sample
- *
- */
 function getHelloWorldString() {
-  return 'hello world'
+  return 'Ready To Launch!'
 }
 
 /* Step 5
