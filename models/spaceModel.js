@@ -8,12 +8,14 @@ const CarrierSchema = new mongoose.Schema({
 
  const FighterSchema = new mongoose.Schema({
   name: String,
-  carrierDock: String
+  carrierDock: String,
+  carrierID: String
  })
 
  const BomberSchema = new mongoose.Schema({
   name: String,
-  carrierDock: String
+  carrierDock: String,
+  carrierID: String
  })
 
 const FighterCollection = mongoose.model('SpaceFighter', FighterSchema)
@@ -41,6 +43,10 @@ const getAllCarriers = () => {
   return CarrierCollection.find()
 }
 
+const getFighters = (carrierId) => {
+  return FighterCollection.find({carrierID: carrierId})
+}
+
 const getCarrierEscort = (carrierID) => {
     // let fightFind = FighterCollection.find(carrierID)
     // let bombFind = BomberCollection.find(carrierID)
@@ -54,5 +60,6 @@ module.exports = {
   addBomb,
   addCarr,
   getAllCarriers,
-  getCarrierEscort
+  getCarrierEscort,
+  getFighters
 }

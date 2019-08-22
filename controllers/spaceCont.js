@@ -76,10 +76,12 @@ spaceRouter.get('/allCarriers', (req, res) => {
 
 spaceRouter.get('/carrierEscort/:id', (req, res) =>{
   spaceApi.getCarrierEscort(req.params.id).then((carrierEscort) => {
-    console.log(carrierEscort)
-        res.render('carrierEscort', {carrierEscort, id: req.params.id})
+    //need to pass 'fighterEscort' and 'bomberEscort'
+    spaceApi.getFighters(req.params.id).then((fighterEscort) =>{
+        res.render('carrierEscort', {carrierEscort, carrId: req.params.id, fighterEscort})
       })
     })
+  })
 
 // spaceRouter.get('/carriers/:id', (req, res) =>{
 //   spaceApi.getCarrier(id).then((id) => {
