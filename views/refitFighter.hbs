@@ -1,0 +1,9 @@
+{{!-- <form method="POST" action="/space/fighter/{{id}}?_method=PUT/{{singleFighter.carrierID}}"></form> --}}
+<form method="POST" action="/space/fighter/{{singleFighter.id}}?_method=PUT">
+  <label>Name</label>
+  <input type="text" name="name" value="{{singleFighter.name}}"/>
+  <label>Carrier Dock</label>
+  <input type="text" name="carrierDock" value="{{singleFighter.carrierDock}}"/>
+  <input type="hidden" name="carrierID" value="{{singleFighter.carrierID}}"/>
+  <input type="submit" value="Refit Fighter" />
+</form>

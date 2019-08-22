@@ -6,7 +6,7 @@
     <label>Bomber Escort</label>
     <input type="number" name="bombNum" value="{{carrierEscort.bomberNum}}"/>
 
-    <input type="submit" value="Refit Carrier" />
+    {{!-- <input type="submit" value="Refit Carrier" /> --}}
 </form>
 
 {{!-- <form method="POST" action="/space/carriers{{id}}?_method=DELETE">
@@ -14,10 +14,11 @@
 </form> --}}
 
 <h1>Fighters</h1>
+<a href="/space/carriers/{{carrId}}/addFighter">Add Fighter</a>
 <ul>
     {{#each fighterEscort}}
     <li>
-        <a href="/space/fighter/{{fightId}}">{{name}}</a>
+        <a href="/space/fighter/{{id}}">{{name}}</a>
     </li>
     {{/each}}
 </ul>
@@ -26,7 +27,7 @@
 <ul>
     {{#each bomberEscort}}
     <li>
-        <a href="/space/bomber/{{id}}">{{name}}</a>
+        <a href="/space/bomber/{{bombId}}">{{name}}</a>
     </li>
     {{/each}}
 </ul>

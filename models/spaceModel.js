@@ -14,8 +14,7 @@ const CarrierSchema = new mongoose.Schema({
 
  const BomberSchema = new mongoose.Schema({
   name: String,
-  carrierDock: String,
-  carrierID: String
+  carrierDock: String
  })
 
 const FighterCollection = mongoose.model('SpaceFighter', FighterSchema)
@@ -44,7 +43,23 @@ const getAllCarriers = () => {
 }
 
 const getFighters = (carrierId) => {
+  //console.log(carrierId)
   return FighterCollection.find({carrierID: carrierId})
+}
+
+const getSingleFighter = (id) =>{
+  //console.log(id)
+  return FighterCollection.findById(id)
+}
+
+const getBombers = (carrierId) => {
+  //console.log(carrierId)
+  return BomberCollection.find({carrierID: carrierId})
+}
+
+const getSingleBomber = (id) =>{
+  //console.log(id)
+  return BomberCollection.findById(id)
 }
 
 const getCarrierEscort = (carrierID) => {
@@ -54,6 +69,13 @@ const getCarrierEscort = (carrierID) => {
     return CarrierCollection.findById(carrierID)
   }
 
+const refitFighter = (id, toUpdate) =>{
+    //THIS NEEDS EVERYTHING
+    console.log("id = " + id)
+    console.log("ToUpdate = " + toUpdate)
+    return FighterCollection.findByIdAndUpdate(id, toUpdate)
+  }
+
 module.exports = {
   getHelloWorldString,
   addFight,
@@ -61,5 +83,9 @@ module.exports = {
   addCarr,
   getAllCarriers,
   getCarrierEscort,
-  getFighters
+  getFighters,
+  getSingleFighter,
+  getBombers,
+  getSingleBomber,
+  refitFighter
 }
