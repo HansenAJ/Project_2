@@ -41,17 +41,18 @@ const getAllCarriers = () => {
   return CarrierCollection.find()
 }
 
-  /*
 const getCarrierEscort = (carrierID) => {
-    let fightFind = FighterCollection.find(carrierID)
-    let bombFind = BomberCollection.find(carrierID)
-    return fightFind, bombFind
+    // let fightFind = FighterCollection.find(carrierID)
+    // let bombFind = BomberCollection.find(carrierID)
+    // return fightFind, bombFind
+    return CarrierCollection.findById(carrierID)
   }
-*/
+
 module.exports = {
   getHelloWorldString,
   addFight,
   addBomb,
   addCarr,
-  getAllCarriers
+  getAllCarriers,
+  getCarrierEscort
 }

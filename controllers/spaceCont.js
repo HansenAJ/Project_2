@@ -62,6 +62,7 @@ spaceRouter.post('/addShip/bomber', (req,res) =>{
 })
 spaceRouter.post('/addShip/carrier', (req,res) =>{
   spaceApi.addCarr(req.body).then(() =>{
+    console.log(req.body)
     res.redirect('/space')
   })
 })
@@ -73,9 +74,10 @@ spaceRouter.get('/allCarriers', (req, res) => {
   //console.log(allIssues)
 })
 
-spaceRouter.get('/carriers/:id', (req, res) =>{
-  spaceApi.getCarrier(req.params.id).then((singleCarrier) => {
-        res.render('singleCarrier', {singleCarrier, id: req.params.id})
+spaceRouter.get('/carrierEscort/:id', (req, res) =>{
+  spaceApi.getCarrierEscort(req.params.id).then((carrierEscort) => {
+    console.log(carrierEscort)
+        res.render('carrierEscort', {carrierEscort, id: req.params.id})
       })
     })
 

@@ -1,0 +1,14 @@
+<form method="POST" action="/space/carriers/{{id}}?_method=PUT">
+    <label>Name</label>
+    <input type="text" name="description" value="{{carrierEscort.name}}"/>
+    <label>Fighter Escort</label>
+    <input type="number" name="fightNum" value="{{carrierEscort.fighterNum}}"/>
+    <label>Bomber Escort</label>
+    <input type="number" name="bombNum" value="{{carrierEscort.bomberNum}}"/>
+
+    <input type="submit" value="Refit Carrier" />
+</form>
+
+{{!-- <form method="POST" action="/space/carriers{{id}}?_method=DELETE">
+    <input type="submit" value="Delete Issue" />
+</form> --}}
