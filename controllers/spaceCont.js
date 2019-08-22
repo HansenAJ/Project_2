@@ -124,6 +124,12 @@ spaceRouter.get("/allbombers", (req,res) =>{
   })
 })
 
+spaceRouter.delete('/fighter/:id', (req,res) =>{
+  spaceApi.scuttleFighter(req.params.id).then(() =>{
+    res.redirect('/space/allCarriers')
+  })
+})
+
 
 /* Step 6
  *

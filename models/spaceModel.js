@@ -76,6 +76,11 @@ const refitFighter = (id, toUpdate) =>{
     return FighterCollection.findByIdAndUpdate(id, toUpdate)
   }
 
+  const scuttleFighter = (id) => {
+    //Same as 'find', but for deleting.
+    return FighterCollection.findByIdAndDelete(id);
+  }
+
 module.exports = {
   getHelloWorldString,
   addFight,
@@ -87,5 +92,6 @@ module.exports = {
   getSingleFighter,
   getBombers,
   getSingleBomber,
-  refitFighter
+  refitFighter,
+  scuttleFighter
 }

@@ -7,3 +7,7 @@
   <input type="hidden" name="carrierID" value="{{singleFighter.carrierID}}"/>
   <input type="submit" value="Refit Fighter" />
 </form>
+
+<form method="POST" action="/space/fighter/{{singleFighter.id}}?_method=DELETE">
+  <input type="submit" value="Scuttle Fighter" />
+</form>
