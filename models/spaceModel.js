@@ -14,7 +14,8 @@ const CarrierSchema = new mongoose.Schema({
 
  const BomberSchema = new mongoose.Schema({
   name: String,
-  carrierDock: String
+  carrierDock: String,
+  carrierID: String
  })
 
 const FighterCollection = mongoose.model('SpaceFighter', FighterSchema)
@@ -63,22 +64,34 @@ const getSingleBomber = (id) =>{
 }
 
 const getCarrierEscort = (carrierID) => {
-    // let fightFind = FighterCollection.find(carrierID)
-    // let bombFind = BomberCollection.find(carrierID)
-    // return fightFind, bombFind
     return CarrierCollection.findById(carrierID)
   }
 
+const refitCarrier = (id, toUpdate) =>{
+    return CarrierCollection.findByIdAndUpdate(id, toUpdate)
+  }
+
 const refitFighter = (id, toUpdate) =>{
-    //THIS NEEDS EVERYTHING
-    console.log("id = " + id)
-    console.log("ToUpdate = " + toUpdate)
     return FighterCollection.findByIdAndUpdate(id, toUpdate)
+  }
+
+  const refitBomber = (id, toUpdate) =>{
+    return BomberCollection.findByIdAndUpdate(id, toUpdate)
+  }
+
+  const scuttleCarrier = (id) => {
+    //Same as 'find', but for deleting.
+    return CarrierCollection.findByIdAndDelete(id);
   }
 
   const scuttleFighter = (id) => {
     //Same as 'find', but for deleting.
     return FighterCollection.findByIdAndDelete(id);
+  }
+
+  const scuttleBomber = (id) => {
+    //Same as 'find', but for deleting.
+    return BomberCollection.findByIdAndDelete(id);
   }
 
 module.exports = {
@@ -93,5 +106,9 @@ module.exports = {
   getBombers,
   getSingleBomber,
   refitFighter,
-  scuttleFighter
+  refitBomber,
+  refitCarrier,
+  scuttleFighter,
+  scuttleBomber,
+  scuttleCarrier
 }

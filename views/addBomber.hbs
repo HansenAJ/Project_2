@@ -1,7 +1,9 @@
-<form method="POST" action="/space/addShip/bomber">
+
+<form method="POST" action="/space/carriers/{{id}}/addBomber">
   <label>Name</label>
   <input type="text" name="name" />
   <label>Carrier Dock</label>
   <input type="text" name="carrierDock" />
+  <input type="hidden" name="carrierID" value="{{id}}" />
   <input type="submit" value="Add Bomber" />
 </form>

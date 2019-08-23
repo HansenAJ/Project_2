@@ -43,8 +43,8 @@ spaceRouter.get('/', (req, res) => {
 spaceRouter.get('/carriers/:id/addFighter', (req, res) => {
   res.render('addFighter', {id: req.params.id})
 })
-spaceRouter.get('/addBomber', (req,res) => {
-  res.render('addBomber')
+spaceRouter.get('/carriers/:id/addBomber', (req,res) => {
+  res.render('addBomber', {id: req.params.id})
 })
 spaceRouter.get('/addCarrier', (req,res) => {
   res.render('addCarrier')
@@ -57,8 +57,9 @@ spaceRouter.post('/carriers/:id/addFighter', (req,res) =>{
   })
 })
 
-spaceRouter.post('/addShip/bomber', (req,res) =>{
+spaceRouter.post('/carriers/:id/addBomber', (req,res) =>{
   spaceApi.addBomb(req.body).then(() =>{
+    //console.log(req.body)
     res.redirect('/space/allCarriers')
   })
 })
@@ -78,36 +79,59 @@ spaceRouter.get('/allCarriers', (req, res) => {
 
 spaceRouter.get('/fighter/:id', (req,res) => {
   spaceApi.getSingleFighter(req.params.id).then((singleFighter) =>{
-    console.log("Selected Fighter : " + singleFighter)
     res.render('refitFighter', {singleFighter})
   })
 })
 
+spaceRouter.get('/bomber/:id', (req,res) => {
+  spaceApi.getSingleBomber(req.params.id).then((singleBomber) =>{
+    res.render('refitBomber', {singleBomber})
+  })
+})
 
 //Update This to Return to selected carrier?
 spaceRouter.put('/fighter/:id', (req,res) => {
-  console.log(req.params.id)
   spaceApi.refitFighter(req.params.id, req.body).then(() =>{
     res.redirect('/space/allCarriers')
   })
 })
 
-spaceRouter.get('/bomber/:id', (req,res) => {
-  spaceApi.getSingleFighter(req.params.id).then((singleBomber) =>{
-    console.log(singleBomber)
-    res.render('refitBomber', {singleBomber})
+//Update This to Return to selected carrier?
+spaceRouter.put('/bomber/:id', (req,res) => {
+  console.log(req.params.id)
+  spaceApi.refitBomber(req.params.id, req.body).then(() =>{
+    res.redirect('/space/allCarriers')
   })
 })
 
 
 spaceRouter.get('/carrierEscort/:id', (req, res) =>{
   spaceApi.getCarrierEscort(req.params.id).then((carrierEscort) => {
-    //need to pass 'fighterEscort' and 'bomberEscort'
     spaceApi.getFighters(req.params.id).then((fighterEscort) =>{
-        res.render('carrierEscort', {carrierEscort, carrId: req.params.id, fighterEscort})
+      spaceApi.getBombers(req.params.id).then((bomberEscort) =>{
+        res.render('carrierEscort', {carrierEscort, carrId: req.params.id, fighterEscort, bomberEscort})
       })
     })
   })
+})
+
+spaceRouter.delete('/fighter/:id', (req,res) =>{
+  spaceApi.scuttleFighter(req.params.id).then(() =>{
+    res.redirect('/space/allCarriers')
+  })
+})
+
+spaceRouter.delete('/bomber/:id', (req,res) =>{
+  spaceApi.scuttleBomber(req.params.id).then(() =>{
+    res.redirect('/space/allCarriers')
+  })
+})
+
+spaceRouter.delete('/carrier/:id', (req,res) =>{
+  spaceApi.scuttleCarrier(req.params.id).then(() =>{
+    res.redirect('/space/allCarriers')
+  })
+})
 
 
 //Test page. Do not impliment
@@ -124,11 +148,6 @@ spaceRouter.get("/allbombers", (req,res) =>{
   })
 })
 
-spaceRouter.delete('/fighter/:id', (req,res) =>{
-  spaceApi.scuttleFighter(req.params.id).then(() =>{
-    res.redirect('/space/allCarriers')
-  })
-})
 
 
 /* Step 6

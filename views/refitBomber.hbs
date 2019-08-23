@@ -1,0 +1,12 @@
+<form method="POST" action="/space/bomber/{{singleBomber.id}}?_method=PUT">
+  <label>Name</label>
+  <input type="text" name="name" value="{{singleBomber.name}}"/>
+  <label>Carrier Dock</label>
+  <input type="text" name="carrierDock" value="{{singleBomber.carrierDock}}"/>
+  <input type="hidden" name="carrierID" value="{{singleBomber.carrierID}}"/>
+  <input type="submit" value="Refit Bomber" />
+</form>
+
+<form method="POST" action="/space/Bomber/{{singleBomber.id}}?_method=DELETE">
+  <input type="submit" value="Scuttle Bomber" />
+</form>
