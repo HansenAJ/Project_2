@@ -1,12 +1,14 @@
 <form method="POST" action="/space/carriers/{{carrId}}?_method=PUT">
     <label>Name</label>
-    <input type="text" name="description" value="{{carrierEscort.name}}"/>
-    <label>Fighter Escort</label>
-    <input type="number" name="fightNum" value="{{carrierEscort.fighterNum}}"/>
-    <label>Bomber Escort</label>
-    <input type="number" name="bombNum" value="{{carrierEscort.bomberNum}}"/>
-
-    {{!-- <input type="submit" value="Refit Carrier" /> --}}
+    <input type="text" name="name" value="{{carrierEscort.name}}"/>
+    <label>Hull Plating</label>
+    <select name="armor">
+                {{!-- helpercall     value test --}}
+        <option value="Cruiser Hull" {{selectedHelper carrierEscort.armor 'Cruiser Hull'}}>Cruiser Hull</option>
+        <option value="Stealth Coating" {{selectedHelper carrierEscort.armor 'Stealth Coating'}}>Stealth Coating</option>
+        <option value="Composite Plating" {{selectedHelper carrierEscort.armor 'Composite Plating'}}>Composite Plating</option>
+     </select>
+    <input type="submit" value="Refit Carrier" />
 </form>
 
 {{!-- <form method="POST" action="/space/carriers{{id}}?_method=DELETE">

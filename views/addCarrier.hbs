@@ -1,9 +1,10 @@
 <form method="POST" action="/space/addShip/carrier">
   <label>Name</label>
   <input type="text" name="name" />
-  <label>Number of Fighters</label>
-  <input type="number" name="fighterNum" />
-  <label>Number of Bombers</label>
-  <input type="number" name="bomberNum" />
+  <select name="armor">
+      <option value="Cruiser Hull" >Cruiser Hull</option>
+      <option value="Stealth Coating" >Stealth Coating</option>
+      <option value="Composite Plating" >Composite Plating</option>
+  </select>
   <input type="submit" value="Add Carrier" />
 </form>

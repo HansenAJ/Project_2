@@ -105,6 +105,13 @@ spaceRouter.put('/bomber/:id', (req,res) => {
   })
 })
 
+spaceRouter.put('/carriers/:id', (req,res) => {
+  console.log(req.params.id)
+  spaceApi.refitCarrier(req.params.id, req.body).then(() =>{
+    res.redirect('/space/allCarriers')
+  })
+})
+
 
 spaceRouter.get('/carrierEscort/:id', (req, res) =>{
   spaceApi.getCarrierEscort(req.params.id).then((carrierEscort) => {

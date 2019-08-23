@@ -2,8 +2,7 @@ const mongoose = require('./connection.js')
 
 const CarrierSchema = new mongoose.Schema({
   name: String,
-  fighterNum: Number,
-  bomberNum: Number
+  armor: String
  })
 
  const FighterSchema = new mongoose.Schema({
