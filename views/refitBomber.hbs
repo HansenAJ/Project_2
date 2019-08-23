@@ -3,6 +3,19 @@
   <input type="text" name="name" value="{{singleBomber.name}}"/>
   <label>Carrier Dock</label>
   <input type="text" name="carrierDock" value="{{singleBomber.carrierDock}}"/>
+  <label>Ordinance Loadout</label>
+  <select name="ordinance">
+    <option value="Anti-Capital Warhead" {{selectedHelper singleBomber.ordinance 'Anti-Capital Warhead'}}>Anti-Capital Warhead</option>
+    <option value="Mine Deployer" {{selectedHelper singleBomber.ordinance 'Mine Deployer'}}>Mine Deployer</option>
+    <option value="Area Denial Launcher" {{selectedHelper singleBomber.ordinance 'Area Denial Launcher'}}>Area Denial Launcher</option>
+  </select>
+  <label>Payload Weight</label>
+  <select name="payload">
+                {{!-- helpercall     value test --}}
+    <option value="Light" {{selectedHelper singleBomber.payload 'Light'}}>Light</option>
+    <option value="Standard" {{selectedHelper singleBomber.payload 'Standard'}}>Standard</option>
+    <option value="Siege" {{selectedHelper singleBomber.payload 'Siege'}}>Siege</option>
+  </select>
   <input type="hidden" name="carrierID" value="{{singleBomber.carrierID}}"/>
   <input type="submit" value="Refit Bomber" />
 </form>

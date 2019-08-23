@@ -4,6 +4,19 @@
   <input type="text" name="name" />
   <label>Carrier Dock</label>
   <input type="text" name="carrierDock" />
+  <label>Ordinance Loadout</label>
+  <select name="ordinance">
+    <option value="Anti-Capital Warhead">Anti-Capital Warhead</option>
+    <option value="Mine Deployer">Mine Deployer</option>
+    <option value="Area Denial Launcher">Area Denial Launcher</option>
+  </select>
+  <label>Payload Weight</label>
+  <select name="payload">
+                {{!-- helpercall     value test --}}
+    <option value="Light">Light</option>
+    <option value="Standard">Standard</option>
+    <option value="Siege">Siege</option>
+  </select>
   <input type="hidden" name="carrierID" value="{{id}}" />
   <input type="submit" value="Add Bomber" />
 </form>
