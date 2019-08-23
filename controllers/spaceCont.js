@@ -79,6 +79,7 @@ spaceRouter.get('/allCarriers', (req, res) => {
 
 spaceRouter.get('/fighter/:id', (req,res) => {
   spaceApi.getSingleFighter(req.params.id).then((singleFighter) =>{
+    console.log(singleFighter)
     res.render('refitFighter', {singleFighter})
   })
 })

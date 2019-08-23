@@ -9,7 +9,8 @@ const CarrierSchema = new mongoose.Schema({
  const FighterSchema = new mongoose.Schema({
   name: String,
   carrierDock: String,
-  carrierID: String
+  carrierID: String,
+  engine: String
  })
 
  const BomberSchema = new mongoose.Schema({

@@ -4,6 +4,13 @@
   <input type="text" name="name" value="{{singleFighter.name}}"/>
   <label>Carrier Dock</label>
   <input type="text" name="carrierDock" value="{{singleFighter.carrierDock}}"/>
+  <label>Engine Loadout</label>
+  <select name="engine">
+                {{!-- helpercall     value test --}}
+    <option value="Interceptor" {{selectedHelper singleFighter.engine 'Interceptor'}}>Interceptor</option>
+    <option value="Air Superiority" {{selectedHelper singleFighter.engine 'Air Superiority'}}>Air Superiority</option>
+    <option value="Recon" {{selectedHelper singleFighter.engine 'Recon'}}>Recon</option>
+  </select>
   <input type="hidden" name="carrierID" value="{{singleFighter.carrierID}}"/>
   <input type="submit" value="Refit Fighter" />
 </form>
