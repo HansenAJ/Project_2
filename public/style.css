@@ -36,13 +36,37 @@ main{
 }
 
 .CruiserHull{
-    content: url(/images/Musai.png)
+    content: url(/images/CruiserHull.png)
 }
 
 .StealthCoating{
-    content: url(/images/magellan.png)
+    content: url(/images/StealthCoating.png)
 }
 
 .CompositePlating{
-    content: url(/images/salamis.png)
+    content: url(/images/CompositePlating.png)
+}
+
+.AirSuperiority{
+    content: url(/images/AirSuperiority.jpg)
+}
+
+.Anti-CapitalWarhead{
+    content: url(/images/Anti-CapitalWarhead.jpg)
+}
+
+.Area-DenialLauncher{
+    content: url(/images/Area-DenialLauncher.jpg)
+}
+
+.Interceptor{
+    content: url(/images/Interceptor.jpg)
+}
+
+.MineDeployer{
+    content: url(/images/MineDeployer.jpg)
+}
+
+.Recon{
+    content: url(/images/Recon.jpg)
 }

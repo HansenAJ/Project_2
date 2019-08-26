@@ -4,21 +4,25 @@
   <label>Carrier Dock</label>
   <input type="text" name="carrierDock" value="{{singleBomber.carrierDock}}" disabled="true" />
   <label>Ordinance Loadout</label>
-  <select name="ordinance">
+  <select name="ordinance" class="baseImage">
     <option value="Anti-Capital Warhead" {{selectedHelper singleBomber.ordinance 'Anti-Capital Warhead'}}>Anti-Capital Warhead</option>
     <option value="Mine Deployer" {{selectedHelper singleBomber.ordinance 'Mine Deployer'}}>Mine Deployer</option>
-    <option value="Area Denial Launcher" {{selectedHelper singleBomber.ordinance 'Area Denial Launcher'}}>Area Denial Launcher</option>
+    <option value="Area Denial-Launcher" {{selectedHelper singleBomber.ordinance 'Area-Denial Launcher'}}>Area-Denial Launcher</option>
   </select>
   <label>Payload Weight</label>
   <select name="payload">
-                {{!-- helpercall     value test --}}
     <option value="Light" {{selectedHelper singleBomber.payload 'Light'}}>Light</option>
     <option value="Standard" {{selectedHelper singleBomber.payload 'Standard'}}>Standard</option>
     <option value="Siege" {{selectedHelper singleBomber.payload 'Siege'}}>Siege</option>
   </select>
   <input type="hidden" name="carrierID" value="{{singleBomber.carrierID}}"/>
   <input type="submit" value="Refit Bomber" />
+  <input type="text" name="image" value="{{singleBomber.image}}" class="image" hidden="true"/>
 </form>
+
+<div class="shipImgHolder">
+    <img src="/images/{{singleBomber.image}}.jpg" alt="bomberImage" class="shipImg">
+</div>
 
 <form method="POST" action="/space/Bomber/{{singleBomber.id}}?_method=DELETE">
   <input type="submit" value="Scuttle Bomber" />

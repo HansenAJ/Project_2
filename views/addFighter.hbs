@@ -4,7 +4,7 @@
   <label>Carrier Dock: </label>
   <input type="text" name="carrierDisp" value="{{carrier.name}}" disabled="true" />
   <input type="hidden" name="carrierDock" value="{{carrier.name}}" />
-  <select name="engine">
+  <select name="engine" class="baseImage">
     <option value="Interceptor">Interceptor</option>
     <option value="Air Superiority">Air Superiority</option>
     <option value="Recon">Recon</option>
@@ -18,4 +18,10 @@
  
   <input type="hidden" name="carrierID" value="{{id}}" />
   <input type="submit" value="Add Fighter" />
+  <input type="text" name="image" value="{{singleFighter.image}}" class="image" hidden="true"/>
+
 </form>
+
+<div class="shipImgHolder">
+    <img src="/images/Interceptor.jpg" alt="fighterImage" class="shipImg">
+</div>

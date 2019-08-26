@@ -1,17 +1,20 @@
 <form method="POST" action="/space/addShip/carrier">
   <label>Name</label>
   <input type="text" name="name" />
-  <select name="armor">
+  <select name="armor" class="baseImage">
       <option value="Cruiser Hull" >Cruiser Hull</option>
       <option value="Stealth Coating" >Stealth Coating</option>
       <option value="Composite Plating" >Composite Plating</option>
   </select>
   <label>Armarments</label>
   <select name="weapons">
-                {{!-- helpercall     value test --}}
     <option value="Rail Gun">Rail Gun</option>
     <option value="Flak Cannon">Flak Cannon</option>
     <option value="Torpedo Volley">Torpedo Volley</option>
   </select>
   <input type="submit" value="Add Carrier" />
+  <input type="text" name="image" value="CruiserHull" class="image" hidden="true"/>
 </form>
+<div class="shipImgHolder">
+    <img src="/images/CruiserHull.png" alt="carrierImage" class="shipImg">
+</div>

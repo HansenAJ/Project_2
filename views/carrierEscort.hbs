@@ -4,7 +4,7 @@
         <input type="text" name="name" value="{{carrierEscort.name}}"/>
     </div>
     <label>Hull Plating</label>
-    <select name="armor" class="carrierArmor">
+    <select name="armor" class="baseImage">
         <option value="Cruiser Hull" {{selectedHelper carrierEscort.armor 'Cruiser Hull'}}>Cruiser Hull</option>
         <option value="Stealth Coating" {{selectedHelper carrierEscort.armor 'Stealth Coating'}}>Stealth Coating</option>
         <option value="Composite Plating" {{selectedHelper carrierEscort.armor 'Composite Plating'}}>Composite Plating</option>
@@ -18,9 +18,10 @@
     <div class="refitBtn">
         <input type="submit" value="Refit Carrier" />
     </div>
+    <input type="text" name="image" value="{{carrierEscort.image}}" class="image" hidden="true"/>
 </form>
 <div class="shipImgHolder">
-    <img src="/images/Musai.png" alt="carrierImage" class="shipImg">
+    <img src="/images/{{carrierEscort.image}}.png" alt="carrierImage" class="shipImg">
 </div>
 
 

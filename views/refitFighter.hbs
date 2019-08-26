@@ -5,22 +5,26 @@
   <label>Carrier Dock</label>
   <input type="text" name="carrierDock" value="{{singleFighter.carrierDock}}" disabled="true" />
   <label>Engine Loadout</label>
-  <select name="engine">
-                {{!-- helpercall     value test --}}
+  <select name="engine" class="baseImage">
     <option value="Interceptor" {{selectedHelper singleFighter.engine 'Interceptor'}}>Interceptor</option>
     <option value="Air Superiority" {{selectedHelper singleFighter.engine 'Air Superiority'}}>Air Superiority</option>
     <option value="Recon" {{selectedHelper singleFighter.engine 'Recon'}}>Recon</option>
   </select>
   <label>Weapons Package</label>
   <select name="weapons">
-                {{!-- helpercall     value test --}}
     <option value="GAU-8 Rotary Cannon" {{selectedHelper singleFighter.weapons 'GAU-8 Rotary Cannon'}}>GAU-8 Rotary Cannon</option>
     <option value="FAF Missile Rack" {{selectedHelper singleFighter.weapons 'FAF Missile Rack'}}>FAF Missile Rack</option>
     <option value="EMP Burst Launcher" {{selectedHelper singleFighter.weapons 'EMP Burst Launcher'}}>EMP Burst Launcher</option>
   </select>
   <input type="hidden" name="carrierID" value="{{singleFighter.carrierID}}"/>
   <input type="submit" value="Refit Fighter" />
+   <input type="text" name="image" value="{{singeFighter.image}}" class="image" hidden="true"/>
+
 </form>
+
+<div class="shipImgHolder">
+    <img src="/images/{{singleFighter.image}}.jpg" alt="fighterImage" class="shipImg">
+</div>
 
 <form method="POST" action="/space/fighter/{{singleFighter.id}}?_method=DELETE">
   <input type="submit" value="Scuttle Fighter" />

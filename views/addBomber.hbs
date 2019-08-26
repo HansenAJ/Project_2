@@ -6,18 +6,22 @@
   <input type="text" name="carrierDisplay" value="{{carrier.name}}" disabled="true" />
   <input type="hidden" name="carrierDock" value="{{carrier.name}}" />
   <label>Ordinance Loadout</label>
-  <select name="ordinance">
+  <select name="ordinance" class="baseImage">
     <option value="Anti-Capital Warhead">Anti-Capital Warhead</option>
     <option value="Mine Deployer">Mine Deployer</option>
-    <option value="Area Denial Launcher">Area Denial Launcher</option>
+    <option value="Area-Denial Launcher">Area-Denial Launcher</option>
   </select>
   <label>Payload Weight</label>
   <select name="payload">
-                {{!-- helpercall     value test --}}
     <option value="Light">Light</option>
     <option value="Standard">Standard</option>
     <option value="Siege">Siege</option>
   </select>
   <input type="hidden" name="carrierID" value="{{id}}" />
   <input type="submit" value="Add Bomber" />
+  <input type="text" name="image" value="{{singleBomber.image}}" class="image" hidden="true"/>
 </form>
+
+<div class="shipImgHolder">
+    <img src="/images/Anti-CapitalWarhead.jpg" alt="bomberImage" class="shipImg">
+</div>

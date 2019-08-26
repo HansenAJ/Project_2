@@ -3,7 +3,8 @@ const mongoose = require('./connection.js')
 const CarrierSchema = new mongoose.Schema({
   name: String,
   armor: String,
-  weapons: String
+  weapons: String,
+  image: String
  })
 
  const FighterSchema = new mongoose.Schema({
@@ -11,7 +12,8 @@ const CarrierSchema = new mongoose.Schema({
   carrierDock: String,
   carrierID: String,
   engine: String,
-  weapons: String
+  weapons: String,
+  image: String
  })
 
  const BomberSchema = new mongoose.Schema({
@@ -19,7 +21,8 @@ const CarrierSchema = new mongoose.Schema({
   carrierDock: String,
   carrierID: String,
   ordinance: String,
-  payload: String
+  payload: String,
+  image: String
  })
 
 const FighterCollection = mongoose.model('SpaceFighter', FighterSchema)
