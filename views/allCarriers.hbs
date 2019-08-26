@@ -6,3 +6,15 @@
     </li>
     {{/each}}
 </ul>
+
+  <select name="Carrier List">
+      {{#each allCarriers}}
+        <option value="name">{{name}}</option>
+    {{/each}}
+  </select>
+
+    <select name="Carrier List">
+      {{#each allCarriers}}
+        <option value="name">{{id}}</option>
+    {{/each}}
+  </select>

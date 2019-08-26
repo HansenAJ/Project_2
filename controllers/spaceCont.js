@@ -41,10 +41,21 @@ spaceRouter.get('/', (req, res) => {
 })
 //spaceRouter.get('/addFighter', (req,res) => {
 spaceRouter.get('/carriers/:id/addFighter', (req, res) => {
-  res.render('addFighter', {id: req.params.id})
+  spaceApi.getCarrierEscort(req.params.id).then((carrier) =>{
+    res.render('addFighter', {id: req.params.id, carrier})
+  })
 })
+
+{/* <select name="Carrier List">
+{{#each allCarriers}}
+  <option value="{{carrierList.id}}">{{carrierList.name}}</option>
+{{/each}}
+</select> */}
+
 spaceRouter.get('/carriers/:id/addBomber', (req,res) => {
-  res.render('addBomber', {id: req.params.id})
+  spaceApi.getCarrierEscort(req.params.id).then((carrier) =>{
+    res.render('addBomber', {id: req.params.id, carrier})
+  })
 })
 spaceRouter.get('/addCarrier', (req,res) => {
   res.render('addCarrier')
@@ -105,7 +116,7 @@ spaceRouter.put('/bomber/:id', (req,res) => {
   })
 })
 
-spaceRouter.put('/carriers/:id', (req,res) => {
+spaceRouter.put('/carriers/:id', (req,res) => { 
   console.log(req.params.id)
   spaceApi.refitCarrier(req.params.id, req.body).then(() =>{
     res.redirect('/space/allCarriers')
@@ -135,7 +146,7 @@ spaceRouter.delete('/bomber/:id', (req,res) =>{
   })
 })
 
-spaceRouter.delete('/carrier/:id', (req,res) =>{
+spaceRouter.delete('/carriers/:id', (req,res) =>{
   spaceApi.scuttleCarrier(req.params.id).then(() =>{
     res.redirect('/space/allCarriers')
   })
