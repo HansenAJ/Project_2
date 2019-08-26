@@ -19,6 +19,9 @@ main{
 .nameHeader{
     text-align: center;
 }
+.refitBtn{
+    text-align: center;
+}
 
 .escortBody{
     width: 100%;
@@ -30,4 +33,16 @@ main{
     background-color: blue;
     width: 40%;
     text-align: center;
+}
+
+.CruiserHull{
+    content: url(/images/Musai.png)
+}
+
+.StealthCoating{
+    content: url(/images/magellan.png)
+}
+
+.CompositePlating{
+    content: url(/images/salamis.png)
 }
