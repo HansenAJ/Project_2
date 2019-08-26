@@ -63,7 +63,7 @@ spaceRouter.get('/addCarrier', (req,res) => {
 
 spaceRouter.post('/carriers/:id/addFighter', (req,res) =>{
   spaceApi.addFight(req.body).then(() =>{
-    //console.log(req.body)
+    console.log("Add Fighter : " + req.body)
     res.redirect('/space/allCarriers')
   })
 })

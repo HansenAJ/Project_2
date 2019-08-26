@@ -53,7 +53,7 @@ const getFighters = (carrierId) => {
 }
 
 const getSingleFighter = (id) =>{
-  //console.log(id)
+  console.log(id)
   return FighterCollection.findById(id)
 }
 

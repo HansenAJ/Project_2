@@ -3,7 +3,8 @@
   <label>Name</label>
   <input type="text" name="name" />
   <label>Carrier Dock: </label>
-  <label>{{carrier.name}}</label>
+  <input type="text" name="carrierDisplay" value="{{carrier.name}}" disabled="true" />
+  <input type="hidden" name="carrierDock" value="{{carrier.name}}" />
   <label>Ordinance Loadout</label>
   <select name="ordinance">
     <option value="Anti-Capital Warhead">Anti-Capital Warhead</option>

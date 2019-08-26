@@ -2,7 +2,8 @@
   <label>Name</label>
   <input type="text" name="name" />
   <label>Carrier Dock: </label>
-  <label>{{carrier.name}}</label>
+  <input type="text" name="carrierDisp" value="{{carrier.name}}" disabled="true" />
+  <input type="hidden" name="carrierDock" value="{{carrier.name}}" />
   <select name="engine">
     <option value="Interceptor">Interceptor</option>
     <option value="Air Superiority">Air Superiority</option>
