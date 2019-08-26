@@ -1,4 +1,7 @@
-document.getElementsByClassName("baseImage")[0].addEventListener("change", picChange);
+let imageExists = document.getElementsByClassName("baseImage")[0];
+
+if(imageExists)
+    imageExists.addEventListener("change", picChange);
 
 //change imgsrc to selected image
 

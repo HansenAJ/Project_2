@@ -16,6 +16,22 @@ main{
     flex-direction: column;
 }
 
+.carrierList{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.singleCarrier{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: solid black 5px;
+}
+
 .nameHeader{
     text-align: center;
 }
