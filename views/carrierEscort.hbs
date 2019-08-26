@@ -1,6 +1,8 @@
 <form method="POST" action="/space/carriers/{{carrId}}?_method=PUT">
-    <label>Name</label>
-    <input type="text" name="name" value="{{carrierEscort.name}}"/>
+    <div class="nameHeader">
+        <label>Name</label>
+        <input type="text" name="name" value="{{carrierEscort.name}}"/>
+    </div>
     <label>Hull Plating</label>
     <select name="armor">
                 {{!-- helpercall     value test --}}
@@ -18,26 +20,33 @@
     <input type="submit" value="Refit Carrier" />
 </form>
 
+
+<div class="escortBody">
+    <div class="escortList">
+        <h2>Fighters</h2>
+        <a href="/space/carriers/{{carrId}}/addFighter">Add Fighter</a>
+        <ul>
+            {{#each fighterEscort}}
+            <li>
+                <a href="/space/fighter/{{id}}">{{name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="escortList">
+        <h2>Bombers</h2>
+        <a href="/space/carriers/{{carrId}}/addBomber">Add Bomber</a>
+        <ul>
+            {{#each bomberEscort}}
+            <li>
+                <a href="/space/bomber/{{id}}">{{name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
 <form method="POST" action="/space/carriers/{{id}}?_method=DELETE">
-    <input type="submit" value="Delete Carrier" />
+    <input type="submit" value="Decomission Carrier" />
 </form>
-
-<h1>Fighters</h1>
-<a href="/space/carriers/{{carrId}}/addFighter">Add Fighter</a>
-<ul>
-    {{#each fighterEscort}}
-    <li>
-        <a href="/space/fighter/{{id}}">{{name}}</a>
-    </li>
-    {{/each}}
-</ul>
-
-<h1>Bombers</h1>
-<a href="/space/carriers/{{carrId}}/addBomber">Add Bomber</a>
-<ul>
-    {{#each bomberEscort}}
-    <li>
-        <a href="/space/bomber/{{id}}">{{name}}</a>
-    </li>
-    {{/each}}
-</ul>

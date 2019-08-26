@@ -1,0 +1,33 @@
+body{
+    background-color: red;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nameHeader{
+    text-align: center;
+}
+
+.escortBody{
+    width: 100%;
+    display: flex;
+    background-color: blue;
+    justify-content: space-evenly;
+}
+.escortList{
+    background-color: blue;
+    width: 40%;
+    text-align: center;
+}
