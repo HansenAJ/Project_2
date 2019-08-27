@@ -88,8 +88,8 @@ const refitFighter = (id, toUpdate) =>{
 
   const scuttleCarrier = (id) => {
     //Same as 'find', but for deleting.
-          BomberCollection.deleteMany({carrierID : id})
-          FighterCollection.deleteMany({carrierID : id})
+          //BomberCollection.deleteMany({carrierID : id})
+          //FighterCollection.deleteMany({carrierID : id})
     return CarrierCollection.findByIdAndDelete(id);
   }
 

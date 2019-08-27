@@ -10,9 +10,8 @@
  }
 
 body{
-    background-image: url(/images/dock.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url(/images/dock.jpg) no-repeat center center;
+    background-attachment: fixed;
 }
 
 h1{
@@ -29,6 +28,7 @@ ul {
 .shipName{
     background-color: rgba(255, 255, 255, 0.3);
     border: solid black 2px;
+    font-size: 2em;
 }
 
 main{
@@ -108,6 +108,12 @@ a{
     text-align: center;
     flex-wrap: wrap;
 }
+
+.shipImg{
+    border: solid black 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 
 .image{
     max-width: 50%;
