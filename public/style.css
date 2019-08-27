@@ -1,6 +1,23 @@
-body{
-    background-color: red;
+@font-face {
+    font-family: 'gFont';
+    src: url(/fonts/Mechsuit.otf);
+ }
+ 
+ @font-face {
+    font-family: gFont;
+    src: url(/fonts/Mechsuit.otf);
+    font-weight: bold;
+ }
 
+body{
+    background-image: url(/images/dock.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1{
+    font-family: 'gFont';
+    background-color: rgba(255, 255, 255, 0.3)
 }
 
 ul {
@@ -9,11 +26,20 @@ ul {
     padding: 0;
   }
 
+.shipName{
+    background-color: rgba(255, 255, 255, 0.3);
+    border: solid black 2px;
+}
+
 main{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+a{
+    text-decoration: none;
 }
 
 .carrierList{
@@ -22,14 +48,35 @@ main{
     flex-direction: row;
     text-align: center;
     flex-wrap: wrap;
+    max-width: 90%;
 }
 
 .singleCarrier{
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     border: solid black 5px;
+    max-width: 22%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px 0px;
+}
+.singleEscort{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    border: solid black 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    max-width: 30%;
+    margin: 5px 0px;
+}
+
+.thumbnail{
+    max-width: 90%;
 }
 
 .nameHeader{
@@ -42,13 +89,29 @@ main{
 .escortBody{
     width: 100%;
     display: flex;
-    background-color: blue;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
-.escortList{
-    background-color: blue;
+.escortListHolder{
     width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     text-align: center;
+}
+
+.escortList{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.image{
+    max-width: 50%;
+    max-height: 20%;
 }
 
 .CruiserHull{
@@ -64,25 +127,25 @@ main{
 }
 
 .AirSuperiority{
-    content: url(/images/AirSuperiority.jpg)
+    content: url(/images/AirSuperiority.png)
 }
 
 .Anti-CapitalWarhead{
-    content: url(/images/Anti-CapitalWarhead.jpg)
+    content: url(/images/Anti-CapitalWarhead.png)
 }
 
 .Area-DenialLauncher{
-    content: url(/images/Area-DenialLauncher.jpg)
+    content: url(/images/Area-DenialLauncher.png)
 }
 
 .Interceptor{
-    content: url(/images/Interceptor.jpg)
+    content: url(/images/Interceptor.png)
 }
 
 .MineDeployer{
-    content: url(/images/MineDeployer.jpg)
+    content: url(/images/MineDeployer.png)
 }
 
 .Recon{
-    content: url(/images/Recon.jpg)
+    content: url(/images/Recon.png)
 }

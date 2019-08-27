@@ -26,31 +26,33 @@
 
 
 <div class="escortBody">
-    <div class="escortList">
+    <div class="escortListHolder">
         <h2>Fighters</h2>
         <a href="/space/carriers/{{carrId}}/addFighter">Add Fighter</a>
-        <ul>
+        <div class="escortList">
             {{#each fighterEscort}}
-            <li>
-                <a href="/space/fighter/{{id}}">{{name}}</a>
-            </li>
+            <div class="singleEscort">
+                <a href="/space/fighter/{{id}}" class="shipName">{{name}}</a>
+                <a href="/space/fighter/{{id}}"><img src="/images/{{image}}.png" alt="FighterImage" class="thumbnail"></a>
+            </div>
             {{/each}}
-        </ul>
+        </div>
     </div>
-    <div class="escortList">
+    <div class="escortListHolder">
         <h2>Bombers</h2>
         <a href="/space/carriers/{{carrId}}/addBomber">Add Bomber</a>
-        <ul>
-            {{#each bomberEscort}}
-            <li>
-                <a href="/space/bomber/{{id}}">{{name}}</a>
-            </li>
-            {{/each}}
-        </ul>
+        <div class="escortList">
+                {{#each bomberEscort}}
+                <div class="singleEscort">
+                    <a href="/space/bomber/{{id}}" class="shipName">{{name}}</a>
+                    <a href="/space/bomber/{{id}}"><img src="/images/{{image}}.png" alt="FighterImage" class="thumbnail"></a>
+                </div>
+                {{/each}}
+        </div>
     </div>
 </div>
 
 
-<form method="POST" action="/space/carriers/{{id}}?_method=DELETE">
+<form method="POST" action="/space/carriers/{{carrId}}?_method=DELETE">
     <input type="submit" value="Decomission Carrier" />
 </form>

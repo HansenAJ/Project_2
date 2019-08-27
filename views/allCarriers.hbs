@@ -1,20 +1,10 @@
 
 <a href="/space/addCarrier">Comission Carrier</a>
-{{!-- <div class="carrierList">
-<ul>
-    {{#each allCarriers}}
-    <li>
-        <a href="/space/carrierEscort/{{id}}">{{name}}</a>
-        <img src="/images/{{image}}.png" alt="CarrierImage">
-    </li>
-    {{/each}}
-</ul>
-</div> --}}
 <div class="carrierList">
     {{#each allCarriers}}
-<div class="singleCarrier">
-        <a href="/space/carrierEscort/{{id}}">{{name}}</a>
-        <a href="/space/carrierEscort/{{id}}"><img src="/images/{{image}}.png" alt="CarrierImage"></a>
-</div>
+    <div class="singleCarrier">
+            <a href="/space/carrierEscort/{{id}}" class="shipName">{{name}}</a>
+            <a href="/space/carrierEscort/{{id}}"><img src="/images/{{image}}.png" alt="CarrierImage" class="thumbnail"></a>
+    </div>
     {{/each}}
 </div>
