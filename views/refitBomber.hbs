@@ -1,4 +1,4 @@
-<div class="shipInfo"></div>
+<div class="shipInfo">
 <form method="POST" action="/space/bomber/{{singleBomber.id}}?_method=PUT">
   <div class="nameHeader">
     <label>Name</label>
@@ -30,12 +30,10 @@
   </div>
   <input type="text" name="image" value="{{singleBomber.image}}" class="image" hidden="true"/>
 </form>
-
+</div>
 <div class="shipImgHolder">
     <img src="/images/{{singleBomber.image}}.png" alt="bomberImage" class="shipImg">
 </div>
-
 <form method="POST" action="/space/Bomber/{{singleBomber.id}}?_method=DELETE">
   <input type="submit" value="Scuttle Bomber" />
 </form>
-</div>
