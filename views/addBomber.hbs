@@ -1,26 +1,37 @@
-
-<form method="POST" action="/space/carriers/{{id}}/addBomber">
-  <label>Name</label>
-  <input type="text" name="name" />
-  <label>Carrier Dock: </label>
-  <input type="text" name="carrierDisplay" value="{{carrier.name}}" disabled="true" />
-  <input type="hidden" name="carrierDock" value="{{carrier.name}}" />
-  <label>Ordinance Loadout</label>
-  <select name="ordinance" class="baseImage">
-    <option value="Anti-Capital Warhead">Anti-Capital Warhead</option>
-    <option value="Mine Deployer">Mine Deployer</option>
-    <option value="Area-Denial Launcher">Area-Denial Launcher</option>
-  </select>
-  <label>Payload Weight</label>
-  <select name="payload">
-    <option value="Light">Light</option>
-    <option value="Standard">Standard</option>
-    <option value="Siege">Siege</option>
-  </select>
-  <input type="hidden" name="carrierID" value="{{id}}" />
-  <input type="submit" value="Add Bomber" />
-  <input type="text" name="image" value="{{singleBomber.image}}" class="image" hidden="true"/>
-</form>
+<div class="shipInfo">
+  <form method="POST" action="/space/carriers/{{id}}/addBomber">
+    <div class="nameHeader">
+      <label>Name</label>
+      <input type="text" name="name" />
+    </div>
+    <div>
+      <label>Carrier Dock: </label>
+      <input type="text" name="carrierDisplay" value="{{carrier.name}}" disabled="true" />
+      <input type="hidden" name="carrierDock" value="{{carrier.name}}" />
+    </div>
+    <div>
+      <label>Ordinance Loadout</label>
+      <select name="ordinance" class="baseImage">
+        <option value="Anti-Capital Warhead">Anti-Capital Warhead</option>
+        <option value="Mine Deployer">Mine Deployer</option>
+        <option value="Area-Denial Launcher">Area-Denial Launcher</option>
+      </select>
+    </div>
+    <div>
+      <label>Payload Weight</label>
+      <select name="payload">
+        <option value="Light">Light</option>
+        <option value="Standard">Standard</option>
+        <option value="Siege">Siege</option>
+      </select>
+    </div>
+    <input type="hidden" name="carrierID" value="{{id}}" />
+    <div class="refitBtn">
+      <input type="submit" value="Add Bomber" />
+    </div>
+    <input type="text" name="image" value="{{singleBomber.image}}" class="image" hidden="true"/>
+  </form>
+</div>
 
 <div class="shipImgHolder">
     <img src="/images/Anti-CapitalWarhead.png" alt="bomberImage" class="shipImg">
