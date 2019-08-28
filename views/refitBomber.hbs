@@ -1,22 +1,33 @@
+<div class="shipInfo"></div>
 <form method="POST" action="/space/bomber/{{singleBomber.id}}?_method=PUT">
-  <label>Name</label>
-  <input type="text" name="name" value="{{singleBomber.name}}"/>
-  <label>Carrier Dock</label>
-  <input type="text" name="carrierDock" value="{{singleBomber.carrierDock}}" disabled="true" />
-  <label>Ordinance Loadout</label>
-  <select name="ordinance" class="baseImage">
-    <option value="Anti-Capital Warhead" {{selectedHelper singleBomber.ordinance 'Anti-Capital Warhead'}}>Anti-Capital Warhead</option>
-    <option value="Mine Deployer" {{selectedHelper singleBomber.ordinance 'Mine Deployer'}}>Mine Deployer</option>
-    <option value="Area Denial-Launcher" {{selectedHelper singleBomber.ordinance 'Area-Denial Launcher'}}>Area-Denial Launcher</option>
-  </select>
-  <label>Payload Weight</label>
-  <select name="payload">
-    <option value="Light" {{selectedHelper singleBomber.payload 'Light'}}>Light</option>
-    <option value="Standard" {{selectedHelper singleBomber.payload 'Standard'}}>Standard</option>
-    <option value="Siege" {{selectedHelper singleBomber.payload 'Siege'}}>Siege</option>
-  </select>
+  <div class="nameHeader">
+    <label>Name</label>
+    <input type="text" name="name" value="{{singleBomber.name}}"/>
+  </div>
+  <div>
+    <label>Carrier Dock</label>
+    <input type="text" name="carrierDock" value="{{singleBomber.carrierDock}}" disabled="true" />
+  </div>
+  <div>
+    <label>Ordinance Loadout</label>
+    <select name="ordinance" class="baseImage">
+      <option value="Anti-Capital Warhead" {{selectedHelper singleBomber.ordinance 'Anti-Capital Warhead'}}>Anti-Capital Warhead</option>
+      <option value="Mine Deployer" {{selectedHelper singleBomber.ordinance 'Mine Deployer'}}>Mine Deployer</option>
+      <option value="Area Denial-Launcher" {{selectedHelper singleBomber.ordinance 'Area-Denial Launcher'}}>Area-Denial Launcher</option>
+    </select>
+  </div>
+  <div>
+    <label>Payload Weight</label>
+    <select name="payload">
+      <option value="Light" {{selectedHelper singleBomber.payload 'Light'}}>Light</option>
+      <option value="Standard" {{selectedHelper singleBomber.payload 'Standard'}}>Standard</option>
+      <option value="Siege" {{selectedHelper singleBomber.payload 'Siege'}}>Siege</option>
+    </select>
+  </div>
   <input type="hidden" name="carrierID" value="{{singleBomber.carrierID}}"/>
-  <input type="submit" value="Refit Bomber" />
+  <div class="refitBtn">
+    <input type="submit" value="Refit Bomber" />
+  </div>
   <input type="text" name="image" value="{{singleBomber.image}}" class="image" hidden="true"/>
 </form>
 
@@ -27,3 +38,4 @@
 <form method="POST" action="/space/Bomber/{{singleBomber.id}}?_method=DELETE">
   <input type="submit" value="Scuttle Bomber" />
 </form>
+</div>
