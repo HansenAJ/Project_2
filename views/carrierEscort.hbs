@@ -1,34 +1,46 @@
-<form method="POST" action="/space/carriers/{{carrId}}?_method=PUT">
-    <div class="nameHeader">
-        <label>Name</label>
-        <input type="text" name="name" value="{{carrierEscort.name}}"/>
-    </div>
-    <label>Hull Plating</label>
-    <select name="armor" class="baseImage">
-        <option value="Cruiser Hull" {{selectedHelper carrierEscort.armor 'Cruiser Hull'}}>Cruiser Hull</option>
-        <option value="Stealth Coating" {{selectedHelper carrierEscort.armor 'Stealth Coating'}}>Stealth Coating</option>
-        <option value="Composite Plating" {{selectedHelper carrierEscort.armor 'Composite Plating'}}>Composite Plating</option>
-    </select>
-    <label>Armarments</label>
-    <select name="weapons">
-        <option value="Rail Gun" {{selectedHelper carrierEscort.weapons 'Rail Gun'}}>Rail Gun</option>
-        <option value="Flak Cannon" {{selectedHelper carrierEscort.weapons 'Flak Cannon'}}>Flak Cannon</option>
-        <option value="Torpedo Volley" {{selectedHelper carrierEscort.weapons 'Torpedo Volley'}}>Torpedo Volley</option>
-    </select>
-    <div class="refitBtn">
-        <input type="submit" value="Refit Carrier" />
-    </div>
-    <input type="text" name="image" value="{{carrierEscort.image}}" class="image" hidden="true"/>
-</form>
-<div class="shipImgHolder">
-    <img src="/images/{{carrierEscort.image}}.png" alt="carrierImage" class="shipImg">
+<div class="shipInfo">
+    <form method="POST" action="/space/carriers/{{carrId}}?_method=PUT">
+        <div class="nameHeader">
+            <label>Name: </label>
+            <input type="text" name="name" value="{{carrierEscort.name}}"/>
+        </div>
+        <div>
+            <label>Hull Plating: </label>
+            <select name="armor" class="baseImage">
+                <option value="Cruiser Hull" {{selectedHelper carrierEscort.armor 'Cruiser Hull'}}>Cruiser Hull</option>
+                <option value="Stealth Coating" {{selectedHelper carrierEscort.armor 'Stealth Coating'}}>Stealth Coating</option>
+                <option value="Composite Plating" {{selectedHelper carrierEscort.armor 'Composite Plating'}}>Composite Plating</option>
+            </select>
+        </div>
+        <div>
+            <label>Armarments: </label>
+            <select name="weapons">
+                <option value="Rail Gun" {{selectedHelper carrierEscort.weapons 'Rail Gun'}}>Rail Gun</option>
+                <option value="Flak Cannon" {{selectedHelper carrierEscort.weapons 'Flak Cannon'}}>Flak Cannon</option>
+                <option value="Torpedo Volley" {{selectedHelper carrierEscort.weapons 'Torpedo Volley'}}>Torpedo Volley</option>
+            </select>
+        </div>
+        <div class="refitBtn">
+            <input type="submit" value="Refit Carrier" />
+        </div>
+        <input type="text" name="image" value="{{carrierEscort.image}}" class="image" hidden="true"/>
+    </form>
 </div>
+
+    <div class="shipImgHolder">
+        <img src="/images/{{carrierEscort.image}}.png" alt="carrierImage" class="shipImg">
+    </div>
+
+
+<form method="POST" action="/space/carriers/{{carrId}}?_method=DELETE">
+    <input type="submit" value="Decomission Carrier" />
+</form>
 
 
 <div class="escortBody">
     <div class="escortListHolder">
         <h2>Fighters</h2>
-        <a href="/space/carriers/{{carrId}}/addFighter">Add Fighter</a>
+        <a href="/space/carriers/{{carrId}}/addFighter" class="createShip">Add Fighter</a>
         <div class="escortList">
             {{#each fighterEscort}}
             <div class="singleEscort">
@@ -40,7 +52,7 @@
     </div>
     <div class="escortListHolder">
         <h2>Bombers</h2>
-        <a href="/space/carriers/{{carrId}}/addBomber">Add Bomber</a>
+        <a href="/space/carriers/{{carrId}}/addBomber" class="createShip">Add Bomber</a>
         <div class="escortList">
                 {{#each bomberEscort}}
                 <div class="singleEscort">
@@ -51,8 +63,3 @@
         </div>
     </div>
 </div>
-
-
-<form method="POST" action="/space/carriers/{{carrId}}?_method=DELETE">
-    <input type="submit" value="Decomission Carrier" />
-</form>
